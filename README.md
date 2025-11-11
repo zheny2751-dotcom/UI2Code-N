@@ -1,9 +1,10 @@
 <h1>UI2Code^N: A Visual Language Model for Test-Time Scalable Interactive UI-to-Code Generation</h1>
 
 <div align="center">
-    <a href="https://huggingface.co/zai-org/Glyph/">🤗 Model</a> •
-    <a href="https://arxiv.org/abs/2510.17800">📄 Paper</a> 
-    • <a href="#demo">🌐 Demo</a>
+    <a href="https://huggingface.co/zai-org/UI2Code_N">🤗 Model</a> •
+    <a href="https://arxiv.org/abs/***">📄 Paper</a> 
+    • <a href="#demo">▶️ Demo</a>
+    • <a href="https://zheny2751-dotcom.github.io/ui2code-n.github.io/">🌐 Website</a>
 </div>
 
 <br>
