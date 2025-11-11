@@ -1,2 +1,2 @@
 #!/bin/bash
-python app.py
+python demo_local.py
