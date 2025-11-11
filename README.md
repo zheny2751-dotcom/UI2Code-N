@@ -34,10 +34,6 @@ prior single-turn generation approaches, redefining UI-to-code as an iterative a
 - [Demo](#demo)
 - [Model](#model)
 - [Quick Start](#quick-start)
-  - [Setup](#setup)
-  - [Rendering Config](#rendering-config)
-  - [Image Rendering](#image-rendering)
-- [Model Inference](#model-inference)
 - [Evaluation](#evaluation)
 - [Result](#result)
   - [Experimental results on UI-to-Code and UI Polishing benchmarks](#experimental-results-on-ui-to-code-and-ui-polishing-benchmarks)
@@ -53,17 +49,18 @@ We provide a ready-to-run demo script that deploys **UI2Code^N**, allowing users
 cd demo
 bash run_demo_web.sh
 ```
+Once the web demo starts, open your browser and visit:
+```bash
+http://127.0.0.1:7860
+```
+
+### Command-Line Demo (Local Setup)
 
 After downloading the model, run the following command to launch the demo::
 ```bash
 cd demo
 bash run_demo.sh
 ```
-Once the web demo starts, open your browser and visit:
-```bash
-http://127.0.0.1:7860
-```
-
 
 This demo will:
 
