@@ -1,0 +1,234 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking.com</title>
+    <script src="https://cdn.jsdelivr.net/npm/react@18.0.0/umd/react.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@18.0.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function App() {
+            return (
+                <div className="min-h-screen bg-white">
+                    <Header />
+                    <HeroSection />
+                    <SearchSection />
+                    <OffersSection />
+                    <ExploreChinaSection />
+                </div>
+            );
+        }
+
+        function Header() {
+            return (
+                <header className="bg-blue-900 text-white py-4">
+                    <div className="container mx-auto px-4 flex items-center justify-between">
+                        <div className="text-3xl font-bold">Booking.com</div>
+                        <div className="flex items-center space-x-8">
+                            <div className="flex items-center space-x-2">
+                                <span>CNY</span>
+                                <img src="https://placehold.co/40x40/ff0000/ffffff?text=GB" alt="British flag showing UK as selected country" className="w-8 h-6" />
+                            </div>
+                            <div className="rounded-full w-8 h-8 border border-white flex items-center justify-center">
+                                <i className="fas fa-question"></i>
+                            </div>
+                            <div className="text-lg">List your property</div>
+                            <button className="bg-white text-blue-800 px-6 py-2 rounded">Register</button>
+                            <button className="bg-white text-blue-800 px-6 py-2 rounded">Sign in</button>
+                        </div>
+                    </div>
+                </header>
+            );
+        }
+
+        function HeroSection() {
+            return (
+                <section className="bg-blue-900 text-white py-20">
+                    <div className="container mx-auto px-4">
+                        <h1 className="text-7xl font-bold mb-6">Find your next stay</h1>
+                        <p className="text-3xl">Search low prices on hotels, homes and much more...</p>
+                    </div>
+                </section>
+            );
+        }
+
+        function SearchSection() {
+            return (
+                <section className="container mx-auto px-4 -mt-8 pb-8">
+                    <div className="bg-white rounded-lg border-2 border-yellow-500 p-2 grid grid-cols-4 gap-2">
+                        <div className="relative rounded-lg border border-gray-300 p-3">
+                            <i className="fas fa-bed text-gray-500 absolute top-3 left-3"></i>
+                            <span className="ml-3">Osaka, Japan</span>
+                            <button className="absolute top-3 right-3 text-gray-500">
+                                <i className="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div className="rounded-lg border border-gray-300 p-3 flex items-center">
+                            <i className="far fa-calendar-alt text-gray-500 text-2xl mr-3"></i>
+                            <span>Tue 14 Oct — Wed 15 Oct</span>
+                        </div>
+                        <div className="relative rounded-lg border border-blue-600 p-3 flex items-center">
+                            <i className="far fa-user text-gray-500 text-2xl mr-3"></i>
+                            <span>2 adults · 0 children · 1 room</span>
+                            <i className="fas fa-chevron-down text-gray-500 absolute right-3"></i>
+                        </div>
+                        <button className="bg-blue-600 text-white rounded-lg px-6 py-3 font-bold text-2xl">
+                            Search
+                        </button>
+                    </div>
+                    
+                    <div className="mt-6">
+                        <label className="flex items-center text-lg">
+                            <input type="checkbox" className="w-6 h-6 mr-3" />
+                            I'm looking for an entire home or apartment
+                        </label>
+                    </div>
+                </section>
+            );
+        }
+
+        function OffersSection() {
+            return (
+                <section className="container mx-auto px-4 pb-12">
+                    <h2 className="text-3xl font-bold mb-4">Offers</h2>
+                    <p className="text-gray-600 text-xl mb-6">Promotions, deals and special offers for you</p>
+                    
+                    <div className="grid grid-cols-2 gap-6">
+                        <div className="bg-white rounded-lg border border-gray-200 p-6">
+                            <h3 className="text-2xl font-bold mb-4">Quick escape, quality time</h3>
+                            <p className="text-lg mb-6">Save up to 20% with a Getaway Deal</p>
+                            <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium">
+                                Save on stays
+                            </button>
+                            <div className="mt-4 flex justify-center">
+                                <img src="https://placehold.co/300x200/ffffff?text=" alt="Couple enjoying time together on a boat, smiling and having fun" className="rounded-lg" />
+                            </div>
+                        </div>
+                        
+                        <div className="bg-gray-900 text-white rounded-lg p-6">
+                            <div className="mb-4">Late Escape Deal</div>
+                            <h3 className="text-2xl font-bold mb-4">Go for Squeeze Club</h3>
+                            <p className="mb-6">Save up to 30% on selected properties</p>
+                            <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium">
+                                Find deals
+                            </button>
+                            <div className="mt-4 flex justify-center">
+                                <img src="https://placehold.co/300x200/ffffff?text=" alt="Coffee cup close-up with warm tones" className="rounded-lg" />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div className="fixed top-1/2 right-4 transform -translate-y-1/2">
+                        <button className="bg-white rounded-full w-12 h-12 shadow-lg flex items-center justify-center">
+                            <i className="fas fa-chevron-right text-gray-600"></i>
+                        </button>
+                    </div>
+                    
+                    {/* Guest selection popup */}
+                    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                        <div className="bg-white rounded-lg p-8 w-full max-w-md">
+                            <div className="grid grid-cols-2 gap-6 mb-6">
+                                <div className="text-lg font-medium">Adults</div>
+                                <div className="flex items-center border border-gray-300 rounded">
+                                    <button className="px-4 py-1 text-2xl">−</button>
+                                    <span className="px-4 py-1">2</span>
+                                    <button className="px-4 py-1 text-2xl">+</button>
+                                </div>
+                            </div>
+                            
+                            <div className="grid grid-cols-2 gap-6 mb-6">
+                                <div className="text-lg font-medium">Children</div>
+                                <div className="flex items-center border border-gray-300 rounded">
+                                    <button className="px-4 py-1 text-2xl">−</button>
+                                    <span className="px-4 py-1">0</span>
+                                    <button className="px-4 py-1 text-2xl">+</button>
+                                </div>
+                            </div>
+                            
+                            <div className="grid grid-cols-2 gap-6 mb-6">
+                                <div className="text-lg font-medium">Rooms</div>
+                                <div className="flex items-center border border-gray-300 rounded">
+                                    <button className="px-4 py-1 text-2xl">−</button>
+                                    <span className="px-4 py-1">1</span>
+                                    <button className="px-4 py-1 text-2xl">+</button>
+                                </div>
+                            </div>
+                            
+                            <div className="flex items-center justify-between mb-6 border-t pt-6">
+                                <span className="text-lg">Travelling with pets?</span>
+                                <div className="w-12 h-6 bg-gray-300 rounded-full relative">
+                                    <div className="w-6 h-6 bg-white rounded-full absolute right-0 shadow"></div>
+                                </div>
+                            </div>
+                            
+                            <p className="mb-2">Assistance animals aren't considered pets.</p>
+                            <a href="#" className="text-blue-600 mb-6 inline-block">
+                                Read more about travelling with assistance animals
+                            </a>
+                            
+                            <button className="w-full border border-blue-600 text-blue-600 py-3 rounded-lg font-medium">
+                                Done
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            );
+        }
+
+        function DestinationCard({ image, city, properties }) {
+            return (
+                <div className="text-center">
+                    <img src={image} alt={`${city} destination`} className="w-full h-56 object-cover rounded-lg" />
+                    <h3 className="text-xl font-bold mt-4">{city}</h3>
+                    <p className="text-gray-600">{properties} properties</p>
+                </div>
+            );
+        }
+
+        function ExploreChinaSection() {
+            const destinations = [
+                { image: "https://placehold.co/300x200/ffffff?text=", city: "Shanghai", properties: "1,548" },
+                { image: "https://placehold.co/300x200/ffffff?text=", city: "Guangzhou", properties: "1,066" },
+                { image: "https://placehold.co/300x200/ffffff?text=", city: "Beijing", properties: "1,096" },
+                { image: "https://placehold.co/300x200/ffffff?text=", city: "Shenzhen", properties: "617" },
+                { image: "https://placehold.co/300x200/ffffff?text=", city: "Chengdu", properties: "598" },
+                { image: "https://placehold.co/300x200/ffffff?text=", city: "Sanya", properties: "227" }
+            ];
+
+            return (
+                <section className="container mx-auto px-4 pb-16">
+                    <h2 className="text-3xl font-bold mb-4">Explore China</h2>
+                    <p className="text-gray-600 text-xl mb-8">These popular destinations have a lot to offer</p>
+                    
+                    <div className="grid grid-cols-6 gap-6">
+                        {destinations.map((dest, index) => (
+                            <DestinationCard 
+                                key={index} 
+                                image={dest.image} 
+                                city={dest.city} 
+                                properties={dest.properties} 
+                            />
+                        ))}
+                    </div>
+                </section>
+            );
+        }
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>

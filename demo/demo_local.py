@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
 Local Gradio Demo for UI2Codeⁿ — Visual UI-to-Code Model
-Author: Zhen Yang
 
 Run:
     python ui2code_demo_local.py
@@ -15,7 +14,8 @@ import torch
 # 1️⃣ Model Configuration
 # ============================================================
 
-MODEL_ID = "zai-org/UI2Code_N"  # 改成你自己的模型名（比如本地路径或 HF 模型名）
+MODEL_ID = "./ui2code"  # 改成你自己的模型名（比如本地路径或 HF 模型名）
+# MODEL_ID = "zai-org/UI2Code_N"  # 改成你自己的模型名（比如本地路径或 HF 模型名）
 
 print(f"🔧 Loading model from {MODEL_ID} ...")
 processor = AutoProcessor.from_pretrained(MODEL_ID)
@@ -93,6 +93,6 @@ demo = gr.Interface(
 # ============================================================
 
 if __name__ == "__main__":
-    print("🚀 Launching Gradio demo at http://127.0.0.1:7860 ...")
-    demo.launch(server_name="0.0.0.0", server_port=7860, share=False)
+    print("🚀 Launching Gradio demo at http://127.0.0.1:7880 ...")
+    demo.launch(server_name="0.0.0.0", server_port=7880, share=False)
 
