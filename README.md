@@ -135,36 +135,6 @@ A rendering example:
 ![Best Config](assets/best_config.png)
 
 
-### Image Rendering
-We provide scripts to render long text into images for your convenience.
-
-This is a simple example of rendering a single text file (e.g., input.txt) into a sequence of images. You can adjust the rendering style by modifying `CONFIG_EN_PATH`.
-```python
-from test_word2png_function_fast import text_to_images
-
-CONFIG_EN_PATH = '../config/config_en.json'
-OUTPUT_DIR = './output_images'
-INPUT_FILE = './input.txt'
-
-# Read text from file
-with open(INPUT_FILE, 'r', encoding='utf-8') as f:
-    text = f.read()
-
-# Convert text to images
-images = text_to_images(
-    text=text,
-    output_dir=OUTPUT_DIR,
-    config_path=CONFIG_EN_PATH,
-    unique_id='test_001'
-)
-
-print(f"\nGenerated {len(images)} image(s):")
-for img_path in images:
-    print(f"  {img_path}")
-```
-
-**Note:** The current text rendering feature is implemented using the `reportlab` library. While the overall process is stable, there is still significant room for acceleration.
-
 ## Model Inference
 After rendering the text into images, you can perform inference with the VLM.
 
