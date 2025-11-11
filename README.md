@@ -118,6 +118,20 @@ output_text = processor.decode(generated_ids[0][inputs["input_ids"].shape[1]:], 
 print(output_text)
 ```
 
+## Model Inference
+After rendering the text into images, you can perform inference with the VLM.
+
+```python
+from vlm_inference import vlm_inference
+
+response = vlm_inference(
+    question="Based on the story in the figures, what is the ending of the wolf?",
+    image_paths=["./output_images/Little_Red_Riding_Hood/page_001.png"]
+)
+print("VLM's Response:")
+print(response)
+```
+
 ## Evaluation
 
 We provide evaluation scripts and test cases for both widely used benchmarks (Design2Code, Flame-React-Eva, Web2Code) and our constructed benchmarks (UI2Code-Real, UIPolish-Real, UIPolish-Synthetic). For detailed instructions on running the evaluations, please refer to the guide in [evaluation/readme.md](./evaluation/readme.md).
