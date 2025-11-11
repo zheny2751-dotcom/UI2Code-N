@@ -71,7 +71,6 @@ Welcome to download and use it!
 
 ## Quick Start
 
-### Setup
 First, please install the required dependencies using the following command:
 ```bash
 apt-get install poppler-utils
@@ -118,22 +117,6 @@ generated_ids = model.generate(**inputs, max_new_tokens=16384)
 output_text = processor.decode(generated_ids[0][inputs["input_ids"].shape[1]:], skip_special_tokens=False)
 print(output_text)
 ```
-
-### Rendering Config
-We provide the post-training configurations for both English and Chinese in the `config` directory, along with the corresponding fonts.
-
-You can customize the newline behavior using the `newline-markup` option in the config file, which could affect the compression ratio:
--   Set `"newline-markup": "<font color=\"#FF0000\"> \\n </font>"` to use a special visual marker for newlines.
--   Set `"newline-markup": "<br/>"` for standard line breaks.
-
-The compression ratio is also influenced by the DPI setting:
--   **DPI=72**: Achieving an average compression of 3-4x, which is the best trade-off between compression ratio and performance.
--   **DPI=96**: Achieving an average compression of 2-3x, which usually leads to better results than dpi 72.
-
-A rendering example:
-
-![Best Config](assets/best_config.png)
-
 
 ## Model Inference
 After rendering the text into images, you can perform inference with the VLM.
