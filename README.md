@@ -47,11 +47,23 @@ prior single-turn generation approaches, redefining UI-to-code as an iterative a
 ## Demo
 We provide a ready-to-run demo script that deploys **UI2Code^N**, allowing users to experience interactive UI-to-code generation, editing, and polishing directly through a command-line or web-based interface.
 
+
+### Web Interface Mode
+```bash
+cd demo
+bash run_demo_web.sh
+```
+
 After downloading the model, run the following command to launch the demo::
 ```bash
 cd demo
 bash run_demo.sh
 ```
+Once the web demo starts, open your browser and visit:
+```bash
+http://127.0.0.1:7860
+```
+
 
 This demo will:
 
