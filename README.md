@@ -66,7 +66,7 @@ https://github.com/user-attachments/assets/9317c567-2b25-40c0-a4f3-7c8edd7a4387
 UI2Code^N achieves performance comparable to leading closed-source models such as Claude-4-Sonnet and GPT-5.
 
 ## Model
-UI2Code^N is built on `GLM-4.1V-9B-Base`, which is publicly available on [Hugging Face](https://huggingface.co/zai-org/Glyph/). 
+UI2Code^N is built on `GLM-4.1V-9B-Base`, which is publicly available on [Hugging Face](https://huggingface.co/zai-org/UI2Code_N). 
 Welcome to download and use it!
 
 ## Quick Start
@@ -78,6 +78,7 @@ apt-get install poppler-utils
 pip install transformers==4.57.1 
 # Optional
 pip install vllm==0.10.2 sglang==0.5.2
+pip install playwright
 ```
 Then, run the following code:
 
@@ -91,7 +92,7 @@ messages = [
         "content": [
             {
                 "type": "image",
-                "url": "https://raw.githubusercontent.com/thu-coai/Glyph/main/assets/Little_Red_Riding_Hood.png"
+                "url": "https://raw.githubusercontent.com/zheny2751-dotcom/UI2Code-N/main/assets/example.png"
             },
             {
                 "type": "text",
@@ -100,9 +101,9 @@ messages = [
         ],
     }
 ]
-processor = AutoProcessor.from_pretrained("zai-org/Glyph")
+processor = AutoProcessor.from_pretrained("zai-org/UI2Code_N")
 model = AutoModelForImageTextToText.from_pretrained(
-    pretrained_model_name_or_path="zai-org/Glyph",
+    pretrained_model_name_or_path="zai-org/UI2Code_N",
     torch_dtype=torch.bfloat16,
     device_map="auto",
 )
@@ -113,7 +114,7 @@ inputs = processor.apply_chat_template(
     return_dict=True,
     return_tensors="pt"
 ).to(model.device)
-generated_ids = model.generate(**inputs, max_new_tokens=8192)
+generated_ids = model.generate(**inputs, max_new_tokens=16384)
 output_text = processor.decode(generated_ids[0][inputs["input_ids"].shape[1]:], skip_special_tokens=False)
 print(output_text)
 ```
